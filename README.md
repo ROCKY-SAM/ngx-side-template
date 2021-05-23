@@ -1,30 +1,35 @@
 # NgxSideTemplate
 
-Please dont use this NPM this is still in development mode 
+ ![image](https://user-images.githubusercontent.com/12700182/119260877-72f3eb80-bbf2-11eb-8d40-446ae9d8de10.png)
 
+Sample Code
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
+<lib-ngx-side-template [items]="items" [divContent]="templateText"></lib-ngx-side-template>
 
-## Development server
+app.module.ts
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {NgxSideTemplateModule} from 'ngx-side-template';
+  imports: [
+    NgxSideTemplateModule
+  ],
+  schemas: [    
+    NO_ERRORS_SCHEMA
+  ]
+  
+app.component.html
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<lib-ngx-side-template [items]="items" [divContent]="templateText"></lib-ngx-side-template>
 
-## Code scaffolding
+app.component.ts
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  templateText:any=` <h2>Responsive Surlebar Example</h2>
+  <p>This example use media queries to transform the surlebar to a top navigation bar when the screen size is 700px or less.</p>
+  <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
+  <h3>Resize the browser window to see the effect.</h3>`;
+  items = [
+    {url: 1, name:'Superman'},
+    {url: 2, name:'Batman'},
+    {url: 5, name:'BatGirl'},
+    {url: 3, name:'Robin'},
+    {url: 4, name:'Flash'}
+];
