@@ -1,5 +1,10 @@
 # NgxSideTemplate
 
+# https://www.npmjs.com/package/ngx-side-template
+```
+npm i ngx-side-template
+```
+
  ![image](https://user-images.githubusercontent.com/12700182/119260877-72f3eb80-bbf2-11eb-8d40-446ae9d8de10.png)
 
 Sample Code
