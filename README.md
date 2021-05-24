@@ -25,7 +25,7 @@ import {NgxSideTemplateModule} from 'ngx-side-template';
 ```
 app.component.html
 ```
-<lib-ngx-side-template [items]="items" [divContent]="templateText"></lib-ngx-side-template>
+<lib-ngx-side-template [items]="items" [divContent]="templateText" (changeActiveLink)="updateItemList($event)"></lib-ngx-side-template>
 ```
 
 app.component.ts
@@ -41,4 +41,8 @@ app.component.ts
     {url: 3, name:'Robin'},
     {url: 4, name:'Flash'}
 ];
+
+  updateItemList(items: Array<any>){
+    this.items = items;
+  }
 ```
