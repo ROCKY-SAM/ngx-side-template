@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit ,Input, Output, EventEmitter} from '@angular/core';
  
 @Component({
   selector: 'lib-ngx-side-template',
@@ -8,16 +8,19 @@ import { Component, OnInit ,Input} from '@angular/core';
 export class NgxSideTemplateComponent implements OnInit {
  @Input() items:Array<any>;
  @Input() divContent:any;
- HEROES = [
-  {id: 1, name:'Superman'},
-  {id: 2, name:'Batman'},
-  {id: 5, name:'BatGirl'},
-  {id: 3, name:'Robin'},
-  {id: 4, name:'Flash'}
-];
+ @Output() changeActiveLink = new EventEmitter<any>(true);
   constructor() { }
 
   ngOnInit(): void {
+  }
+  changeActive(item){
+    this.items.forEach(element => {
+      element.active = ""; 
+      if(element.url == item.url){
+        element.active = "active";
+      }
+    });
+    this.changeActiveLink.emit(this.items);
   }
 
  

@@ -1,6 +1,6 @@
 
 <div class="sidebar">
-  <a href="{{item.url}}" *ngFor="let item of items">{{item.name}}</a>
+  <a routerLink="{{item.url}}" routerLinkActive="router-link-active"  *ngFor="let item of items" (click)="changeActive(item)" class="{{item.active}}">{{item.name}}</a>
 </div>
 
 <div class="content" [innerHTML]="divContent">
